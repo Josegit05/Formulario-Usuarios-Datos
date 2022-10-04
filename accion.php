@@ -20,8 +20,8 @@ $Email1="yes";
 			</p>
 
             <p>Notificaciones por email:
-				<input type="radio" value="si" name="Notificaciones"/>Si
-                <input type="radio" value="no" name="Notificaciones"/>No
+				<input type="radio" value="Sí" name="Notificaciones"/>Si
+                <input type="radio" value="No" name="Notificaciones"/>No
 			</p>
             
 			<p><input type="submit" value="Subir fichero"/></p>
