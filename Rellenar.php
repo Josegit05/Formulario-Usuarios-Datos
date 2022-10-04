@@ -17,7 +17,7 @@ if(isset($_POST['nombre']))
     if(isset($_POST['Notificaciones']))
     { 
     $nombreArchivo = "datosPerfil.txt";
-    if(isset($nombreArchivo))
+    if(file_exists("datosPerfil.txt"))
     {
     $archivo = fopen($nombreArchivo, "w");
     fwrite($archivo, $txt2);
