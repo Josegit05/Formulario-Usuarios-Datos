@@ -1,1 +1,1 @@
-Nombre: José María<br>Apellidos: García Morales<br>Correo electronico: josemariagarciamorales@alumno.ieselrincon.es<br>Pais: Espania<br>Notificaciones: Sí
+Nombre: José María<br>Apellidos: García Morales<br>Correo electronico: josemari@ieselrincon.es<br>Pais: Espania<br>Notificaciones: Sí

@@ -1,30 +1,37 @@
 <?php
-$nombre="José María";
-$apellidos="García Morales";
-$ingresacorreo="josemariagarciamorales@alumno.ieselrincon.es";
-$Pais="Espania";
-$Email1="yes";
+
+if(file_exists("datosPerfil.txt") && filesize("datosPerfil.txt")>0)
+{
+	$manejador = fopen("datosPerfil.txt", "r");
+	$Lectura= fread($manejador,filesize("datosPerfil.txt"));
+	echo $Lectura;
+	fclose($manejador);
+}
 ?>
 <html>
 	<body>
-		<form action="Rellenar.php" method="post">
-			<p>Su nombre: <input type="text" name="nombre" value="<?php echo $nombre?>"/></p>
+		<form action="Rellenar.php" method="post" enctype="multipart/form-data">
+		<br>
+			<label for="nombre">Nombre: </label> <input type="text" name="nombre"/>
 			
-            <p>Sus apellidos: <input type="text" name="apellidos" value="<?php echo $apellidos?>" /></p>
+			<br><br>
+            <label for="apellidos">Sus apellidos:</label> <input type="text" name="apellidos" />
+			<br><br>
+			<label for="ingresacorreo">Correo electronico:</label> <input name="ingresacorreo" type="email" />
+			<br><br>
+			<label for="entradapais">Pais:</label> 
+			<select name="entradapais">
+				<option value="Espania">Espania</option>
+				<option value="Francia">Francia </option>
+				<option value="Portugal">Portugal</option>
+			</select>
 			
-			<p>Correo electronico: <input name="ingresacorreo" type="email" value="<?php echo $ingresacorreo?>" /></p>
-			
-			<p>Pais: <select name="entradapais">
-            <option selected value="<?php echo $Pais?>"> <?php echo $Pais?>
-				</select>
-			</p>
-
-            <p>Notificaciones por email:
+			<br><br>
+            <label for="entradapais">Notificaciones por email:</label>
 				<input type="radio" value="Sí" name="Notificaciones"/>Si
                 <input type="radio" value="No" name="Notificaciones"/>No
-			</p>
-            
-			<p><input type="submit" value="Subir fichero"/></p>
+				<br><br>
+			<input type="submit" name="submit" value="Enviar"/>
 		</form>
 	</body>
 </html>
